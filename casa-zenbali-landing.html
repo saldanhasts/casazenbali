@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa Zenbali — Hospedagem Boutique na Serra da Moeda | Brumadinho, MG</title>
+<meta name="description" content="Refúgio contemporâneo aos pés da Serra da Moeda, a 45km de BH. Piscina aquecida de borda infinita, spa privativo e silêncio absoluto — exclusivo para duas pessoas.">
+<meta property="og:title" content="Casa Zenbali — Hospedagem Boutique, Serra da Moeda">
+<meta property="og:description" content="O luxo de respirar devagar. Piscina de borda infinita, spa privativo e privacidade total para duas pessoas em Brumadinho, MG.">
+<meta property="og:image" content="https://a0.muscache.com/im/pictures/hosting/Hosting-1533772593025815094/original/a507f5ac-2b73-4318-b742-36fd60f4c8cb.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pine:#16241D;
+    --pine-2:#1F332A;
+    --pine-3:#243D32;
+    --stone:#E9E1CF;
+    --stone-2:#DDD1B4;
+    --ink:#181712;
+    --paper:#F6F2E7;
+    --brass:#AC8347;
+    --brass-deep:#8C6432;
+    --clay:#7B3F2E;
+    --line: rgba(172,131,71,0.35);
+    --shadow: 0 20px 50px -20px rgba(0,0,0,0.35);
+    --ease: cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0;
+    font-family:'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces', Georgia, serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+  .mono{
+    font-family:'JetBrains Mono', monospace;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 28px;}
+  section{position:relative;}
+
+  /* ---------- NAV ---------- */
+  #nav{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px 28px;
+    color:var(--stone);
+    transition: background .35s var(--ease), padding .35s var(--ease), box-shadow .35s var(--ease);
+  }
+  #nav.scrolled{
+    background:rgba(22,36,29,0.82);
+    backdrop-filter:blur(10px);
+    padding:14px 28px;
+    box-shadow:0 8px 30px -20px rgba(0,0,0,0.6);
+  }
+  .brand{
+    font-family:'Fraunces', serif; font-size:1.15rem; font-weight:600;
+    letter-spacing:0.02em;
+  }
+  .brand span{color:var(--brass); font-style:italic; font-weight:400;}
+  .nav-cta{
+    font-family:'Work Sans', sans-serif; font-size:0.82rem; font-weight:600;
+    color:var(--pine); background:var(--brass);
+    padding:10px 18px; border-radius:100px;
+    text-decoration:none; white-space:nowrap;
+    transition:background .25s var(--ease), transform .25s var(--ease);
+  }
+  .nav-cta:hover{background:#c79a5d; transform:translateY(-1px);}
+
+  /* ---------- HERO ---------- */
+  #hero{
+    position:relative;
+    min-height:100vh;
+    display:flex; align-items:flex-end;
+    background:
+      linear-gradient(180deg, rgba(15,23,18,0.55) 0%, rgba(15,23,18,0.35) 30%, rgba(12,18,14,0.88) 100%),
+      url('https://a0.muscache.com/im/pictures/hosting/Hosting-1533772593025815094/original/a507f5ac-2b73-4318-b742-36fd60f4c8cb.png') center/cover no-repeat;
+    color:var(--paper);
+    padding-top:120px;
+  }
+  .hero-inner{padding-bottom:88px; width:100%;}
+  .eyebrow{
+    font-size:0.72rem; color:var(--brass); font-weight:500;
+    display:flex; align-items:center; gap:10px; margin-bottom:22px;
+  }
+  .eyebrow::before{content:""; width:34px; height:1px; background:var(--brass); display:inline-block;}
+  h1.hero-title{
+    font-size:clamp(2.5rem, 6vw, 5rem);
+    line-height:1.02;
+    max-width:15ch;
+    color:var(--paper);
+  }
+  h1.hero-title em{color:var(--brass); font-style:italic; font-weight:400;}
+  .hero-sub{
+    margin-top:26px; max-width:46ch;
+    font-size:1.08rem; color:rgba(246,242,231,0.86); font-weight:300;
+  }
+  .hero-actions{margin-top:40px; display:flex; align-items:center; gap:24px; flex-wrap:wrap;}
+  .btn-primary{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--brass); color:var(--pine);
+    font-weight:600; font-size:0.95rem;
+    padding:17px 30px; border-radius:100px; text-decoration:none;
+    box-shadow:var(--shadow);
+    transition:background .25s var(--ease), transform .25s var(--ease);
+  }
+  .btn-primary:hover{background:#c79a5d; transform:translateY(-2px);}
+  .btn-primary svg{width:16px; height:16px; transition:transform .25s var(--ease);}
+  .btn-primary:hover svg{transform:translateX(3px);}
+  .trust-line{
+    display:flex; align-items:center; gap:8px;
+    font-size:0.85rem; color:rgba(246,242,231,0.75);
+  }
+  .trust-line b{color:var(--paper);}
+  .coord-tag{
+    position:absolute; right:28px; bottom:34px;
+    font-size:0.68rem; color:rgba(246,242,231,0.55);
+    text-align:right; line-height:1.6;
+    display:none;
+  }
+  @media(min-width:900px){.coord-tag{display:block;}}
+
+  /* ---------- SKYLINE DIVIDER ---------- */
+  .skyline{line-height:0; margin-top:-2px;}
+  .skyline svg{width:100%; height:auto; display:block;}
+
+  /* ---------- STATS STRIP ---------- */
+  #stats{
+    background:var(--stone); padding:56px 0;
+    border-bottom:1px solid rgba(23,23,18,0.08);
+  }
+  .stats-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:20px; text-align:center;
+  }
+  @media(max-width:800px){.stats-grid{grid-template-columns:repeat(2,1fr); gap:36px 20px;}}
+  .stat-num{
+    font-family:'Fraunces', serif; font-size:clamp(1.8rem,3.4vw,2.6rem);
+    color:var(--clay); font-weight:500;
+  }
+  .stat-label{
+    font-size:0.78rem; color:var(--ink); opacity:0.65; margin-top:6px;
+    font-weight:500;
+  }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section-pad{padding:110px 0;}
+  @media(max-width:800px){.section-pad{padding:72px 0;}}
+  .kicker{
+    font-size:0.72rem; font-weight:500; color:var(--brass-deep); margin-bottom:18px;
+  }
+  .kicker::before{content:"— "; }
+  h2.section-title{
+    font-size:clamp(1.9rem,3.6vw,3rem);
+    max-width:16ch; margin-bottom:22px;
+  }
+  .section-lead{
+    max-width:58ch; font-size:1.05rem; opacity:0.78; font-weight:300;
+  }
+
+  /* ---------- EXPERIENCIA (dark) ---------- */
+  #experiencia{background:var(--pine); color:var(--stone);}
+  #experiencia .kicker{color:var(--brass);}
+  #experiencia .section-lead{color:rgba(233,225,207,0.78);}
+  blockquote.pull{
+    font-family:'Fraunces', serif; font-style:italic; font-weight:400;
+    font-size:clamp(1.5rem,3vw,2.3rem);
+    color:var(--paper); max-width:22ch;
+    margin:56px 0 0; padding-left:28px;
+    border-left:2px solid var(--brass);
+    line-height:1.3;
+  }
+
+  /* ---------- ESPAÇO / GALLERY ---------- */
+  #espaco{background:var(--paper);}
+  .gallery{
+    display:grid; grid-template-columns:1.3fr 1fr 1fr; grid-template-rows:220px 220px;
+    gap:14px; margin:56px 0 72px; border-radius:4px; overflow:hidden;
+  }
+  .gallery img{width:100%; height:100%; object-fit:cover; transition:transform .6s var(--ease);}
+  .gallery a{overflow:hidden; display:block; position:relative;}
+  .gallery a:hover img{transform:scale(1.06);}
+  .g1{grid-row:1 / span 2;}
+  .g4{grid-column:2 / span 2;}
+  @media(max-width:800px){
+    .gallery{grid-template-columns:1fr 1fr; grid-template-rows:160px 160px 160px;}
+    .g1{grid-column:1/-1; grid-row:1;}
+    .g4{grid-column:1/-1;}
+  }
+  .amenities-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:2px;
+    background:rgba(23,23,18,0.1); border:1px solid rgba(23,23,18,0.1);
+  }
+  @media(max-width:900px){.amenities-grid{grid-template-columns:repeat(2,1fr);}}
+  .amenity{
+    background:var(--paper); padding:34px 26px; min-height:190px;
+    display:flex; flex-direction:column; gap:14px;
+  }
+  .amenity svg{width:26px; height:26px; color:var(--clay);}
+  .amenity h3{font-family:'Work Sans',sans-serif; font-size:1rem; font-weight:600;}
+  .amenity p{margin:0; font-size:0.88rem; opacity:0.72; font-weight:300;}
+
+  /* ---------- SERVIÇOS ---------- */
+  #servicos{background:var(--stone-2);}
+  .services-row{
+    display:grid; grid-template-columns:repeat(5,1fr); gap:16px; margin-top:52px;
+  }
+  @media(max-width:900px){.services-row{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:520px){.services-row{grid-template-columns:1fr;}}
+  .service-card{
+    background:var(--paper); padding:28px 22px; border-radius:6px;
+    border:1px solid rgba(23,23,18,0.08);
+    transition:transform .3s var(--ease), box-shadow .3s var(--ease);
+  }
+  .service-card:hover{transform:translateY(-5px); box-shadow:var(--shadow);}
+  .service-num{font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:var(--brass-deep);}
+  .service-card h3{font-size:1.02rem; margin-top:10px; font-family:'Fraunces',serif; font-weight:500;}
+  .service-card p{font-size:0.85rem; opacity:0.7; margin-top:8px; font-weight:300;}
+  .service-note{margin-top:30px; font-size:0.85rem; opacity:0.65; font-style:italic;}
+
+  /* ---------- AVALIAÇÕES ---------- */
+  #avaliacoes{background:var(--pine); color:var(--stone);}
+  .review-layout{display:grid; grid-template-columns:1fr 1.4fr; gap:70px; margin-top:56px;}
+  @media(max-width:850px){.review-layout{grid-template-columns:1fr; gap:44px;}}
+  .rating-row{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:16px; font-size:0.88rem;}
+  .rating-row .bar{flex:1; height:3px; background:rgba(233,225,207,0.18); margin:0 14px; position:relative; border-radius:2px;}
+  .rating-row .bar span{position:absolute; inset:0; width:100%; background:var(--brass); border-radius:2px;}
+  .tagcloud{display:flex; flex-wrap:wrap; gap:14px 20px; align-items:baseline;}
+  .tagcloud span{font-family:'Fraunces',serif; color:var(--paper); opacity:0.9; white-space:nowrap;}
+  .tagcloud span small{font-family:'JetBrains Mono',monospace; opacity:0.5; font-size:0.6em; margin-left:4px;}
+  .review-cta{margin-top:36px; font-size:0.88rem;}
+  .review-cta a{color:var(--brass); text-decoration:underline; text-underline-offset:3px;}
+
+  /* ---------- ANFITRIÕES ---------- */
+  #anfitrioes{background:var(--paper);}
+  .host-layout{display:grid; grid-template-columns:220px 1fr; gap:44px; margin-top:52px; align-items:start;}
+  @media(max-width:700px){.host-layout{grid-template-columns:1fr;}}
+  .host-photo{
+    width:100%; aspect-ratio:1/1; border-radius:50%; overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .host-photo img{width:100%; height:100%; object-fit:cover;}
+  .host-badges{display:flex; gap:10px; margin-top:18px; flex-wrap:wrap;}
+  .badge{
+    font-size:0.68rem; font-weight:600; padding:6px 12px; border-radius:100px;
+    background:var(--stone-2); color:var(--clay);
+  }
+  .host-text p{max-width:62ch; font-weight:300; opacity:0.85;}
+  .host-stats{display:flex; gap:36px; margin-top:24px; flex-wrap:wrap;}
+  .host-stats div{font-size:0.82rem;}
+  .host-stats b{display:block; font-family:'Fraunces',serif; font-size:1.3rem; font-weight:500; color:var(--clay);}
+
+  /* ---------- PARA QUEM ---------- */
+  #paraquem{background:var(--stone-2);}
+  .fit-layout{display:grid; grid-template-columns:1fr 1fr; gap:36px; margin-top:52px;}
+  @media(max-width:800px){.fit-layout{grid-template-columns:1fr;}}
+  .fit-card{background:var(--paper); border-radius:6px; padding:36px 32px; border:1px solid rgba(23,23,18,0.08);}
+  .fit-card h3{font-family:'Fraunces',serif; font-weight:500; font-size:1.2rem; margin-bottom:18px;}
+  .fit-card ul{margin:0; padding:0; list-style:none;}
+  .fit-card li{
+    display:flex; gap:12px; font-size:0.92rem; opacity:0.85; padding:9px 0;
+    border-top:1px solid rgba(23,23,18,0.07);
+  }
+  .fit-card li:first-child{border-top:none;}
+  .fit-card li svg{width:16px; height:16px; flex-shrink:0; margin-top:2px;}
+  .fit-yes svg{color:#4d6b53;}
+  .fit-no svg{color:var(--clay);}
+
+  /* ---------- FAQ ---------- */
+  #faq{background:var(--paper); max-width:820px; margin:0 auto;}
+  details{
+    border-top:1px solid rgba(23,23,18,0.14); padding:22px 0;
+  }
+  details:last-child{border-bottom:1px solid rgba(23,23,18,0.14);}
+  summary{
+    cursor:pointer; list-style:none; font-family:'Fraunces',serif; font-size:1.08rem;
+    display:flex; justify-content:space-between; align-items:center; gap:20px;
+    font-weight:500;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary .plus{
+    width:22px; height:22px; border:1px solid var(--brass-deep); border-radius:50%;
+    flex-shrink:0; position:relative;
+  }
+  summary .plus::before, summary .plus::after{
+    content:""; position:absolute; background:var(--brass-deep);
+    top:50%; left:50%; transform:translate(-50%,-50%);
+  }
+  summary .plus::before{width:9px; height:1px;}
+  summary .plus::after{width:1px; height:9px; transition:opacity .2s;}
+  details[open] summary .plus::after{opacity:0;}
+  details p{margin:16px 0 0; font-size:0.94rem; opacity:0.75; max-width:60ch; font-weight:300;}
+
+  /* ---------- FINAL CTA ---------- */
+  #reservar{
+    background:var(--pine); color:var(--paper); text-align:center;
+    padding:130px 0;
+    position:relative; overflow:hidden;
+  }
+  #reservar::before{
+    content:""; position:absolute; inset:0;
+    background:radial-gradient(ellipse at 50% 0%, rgba(172,131,71,0.16), transparent 60%);
+  }
+  #reservar h2{font-size:clamp(2.1rem,4.4vw,3.4rem); max-width:16ch; margin:0 auto 20px;}
+  #reservar p{max-width:46ch; margin:0 auto; opacity:0.75; font-weight:300;}
+  #reservar .btn-primary{margin-top:40px;}
+  .dates-note{margin-top:18px; font-size:0.78rem; opacity:0.55;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink); color:rgba(246,242,231,0.6); padding:48px 0; font-size:0.82rem;}
+  .foot-row{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:20px;}
+  footer a{color:rgba(246,242,231,0.8); text-decoration:underline; text-underline-offset:3px;}
+  .foot-disclaimer{margin-top:26px; font-size:0.74rem; opacity:0.55; max-width:70ch;}
+
+  /* ---------- STICKY MOBILE CTA ---------- */
+  #sticky-cta{
+    position:fixed; left:0; right:0; bottom:-100px; z-index:60;
+    background:rgba(22,36,29,0.95); backdrop-filter:blur(10px);
+    padding:14px 20px; display:flex; align-items:center; justify-content:space-between; gap:16px;
+    transition:bottom .35s var(--ease);
+    border-top:1px solid rgba(172,131,71,0.3);
+  }
+  #sticky-cta.show{bottom:0;}
+  #sticky-cta span{color:var(--stone); font-size:0.82rem; font-weight:500;}
+  #sticky-cta .btn-primary{padding:11px 22px; font-size:0.85rem; white-space:nowrap;}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s var(--ease), transform .7s var(--ease);}
+  .reveal.is-visible{opacity:1; transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="brand">CASA <span>Zenbali</span></div>
+  <a class="nav-cta" href="https://www.airbnb.com.br/rooms/1533772593025815094?check_in=2026-08-06&check_out=2026-08-11&adults=2" target="_blank" rel="noopener">Verificar disponibilidade</a>
+</nav>
+
+<!-- HERO -->
+<header id="hero">
+  <div class="wrap hero-inner">
+    <p class="eyebrow mono">Serra da Moeda · Brumadinho, MG · 45km de BH</p>
+    <h1 class="hero-title">O luxo de <em>respirar devagar.</em></h1>
+    <p class="hero-sub">Casa Zenbali é um refúgio contemporâneo aos pés da Serra da Moeda — piscina aquecida de borda infinita, spa privativo e silêncio absoluto, para apenas duas pessoas.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://www.airbnb.com.br/rooms/1533772593025815094?check_in=2026-08-06&check_out=2026-08-11&adults=2" target="_blank" rel="noopener">
+        Verificar disponibilidade
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <div class="trust-line">★ <b>5,0</b>&nbsp;· 40 avaliações · Preferido dos hóspedes</div>
+    </div>
+  </div>
+  <p class="coord-tag mono">20°08'S 44°12'W<br>Piscina aquecida · 24h</p>
+</header>
+<div class="skyline" aria-hidden="true" style="background:#10190f;">
+  <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,90 L0,55 L110,15 L230,50 L360,8 L520,48 L650,20 L800,52 L960,12 L1120,46 L1280,22 L1440,42 L1440,90 Z" fill="#E9E1CF"/></svg>
+</div>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="wrap stats-grid">
+    <div class="reveal">
+      <div class="stat-num" data-count="5.0" data-decimal="1">0</div>
+      <div class="stat-label">Avaliação geral</div>
+    </div>
+    <div class="reveal">
+      <div class="stat-num" data-count="40">0</div>
+      <div class="stat-label">Avaliações · 100% cinco estrelas</div>
+    </div>
+    <div class="reveal">
+      <div class="stat-num">Top 5%</div>
+      <div class="stat-label">dos anúncios no Airbnb</div>
+    </div>
+    <div class="reveal">
+      <div class="stat-num" data-count="2">0</div>
+      <div class="stat-label">Hóspedes · exclusividade total</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIÊNCIA -->
+<section id="experiencia" class="section-pad">
+  <div class="wrap">
+    <p class="kicker mono reveal">Destination Hospitality</p>
+    <h2 class="section-title reveal">Um destino em si — não apenas uma hospedagem.</h2>
+    <p class="section-lead reveal">Criada em sintonia com a nova tendência global do turismo, a Casa Zenbali guia sua estadia por wellness, reconexão e presença. Cercada por natureza preservada, aqui a única urgência é a de estar inteiro.</p>
+    <blockquote class="pull reveal">“O luxo é respirar devagar — e estar inteiro.”</blockquote>
+  </div>
+</section>
+
+<!-- O ESPAÇO -->
+<section id="espaco" class="section-pad">
+  <div class="wrap">
+    <p class="kicker mono reveal">O espaço</p>
+    <h2 class="section-title reveal">Feito para dois. Só para vocês.</h2>
+    <p class="section-lead reveal">Arquitetura autoral, decoração assinada e cada detalhe pensado para privacidade a dois — sem visitantes, sem festas, sem pressa.</p>
+
+    <div class="gallery reveal">
+      <a class="g1" href="https://www.airbnb.com.br/rooms/1533772593025815094?check_in=2026-08-06&check_out=2026-08-11&adults=2" target="_blank" rel="noopener">
+        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1533772593025815094/original/a507f5ac-2b73-4318-b742-36fd60f4c8cb.png?im_w=720" alt="Casa Zenbali — vista externa e piscina de borda infinita" loading="lazy">
+      </a>
+      <a href="https://www.airbnb.com.br/rooms/1533772593025815094?check_in=2026-08-06&check_out=2026-08-11&adults=2" target="_blank" rel="noopener">
+        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1533772593025815094/original/5d4e78f2-43af-4da8-a239-9b9170355d57.png?im_w=720" alt="Casa Zenbali — ambiente interno" loading="lazy">
+      </a>
+      <a href="https://www.airbnb.com.br/rooms/1533772593025815094?check_in=2026-08-06&check_out=2026-08-11&adults=2" target="_blank" rel="noopener">
+        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1533772593025815094/original/70d1d6d6-f12b-491a-83a1-5c3d6478dcc9.png?im_w=720" alt="Casa Zenbali — spa privativo" loading="lazy">
+      </a>
+      <a class="g4" href="https://www.airbnb.com.br/rooms/1533772593025815094?check_in=2026-08-06&check_out=2026-08-11&adults=2" target="_blank" rel="noopener">
+        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1533772593025815094/original/4849afff-4581-49d5-8d35-fab6647067d6.png?im_w=720" alt="Quarto com cama king size" loading="lazy">
+      </a>
+    </div>
+
+    <div class="amenities-grid reveal">
+      <div class="amenity">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 17c1.5 1.4 3 1.4 4.5 0s3-1.4 4.5 0 3 1.4 4.5 0 3-1.4 4.5 0M2 12c1.5 1.4 3 1.4 4.5 0s3-1.4 4.5 0 3 1.4 4.5 0 3-1.4 4.5 0"/></svg>
+        <h3>Piscina de borda infinita</h3>
+        <p>Aquecida, disponível 24h, o ano todo.</p>
+      </div>
+      <div class="amenity">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="9" width="16" height="9" rx="1"/><path d="M8 9V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3"/></svg>
+        <h3>Spa privativo</h3>
+        <p>Banheira de imersão e dois chuveiros.</p>
+      </div>
+      <div class="amenity">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 21V12a3 3 0 0 1 6 0v9M6 21h12M8 12c0-3 1-5 4-9 3 4 4 6 4 9"/></svg>
+        <h3>Fire place</h3>
+        <p>Noites tranquilas na serra.</p>
+      </div>
+      <div class="amenity">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M5 10V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"/></svg>
+        <h3>Cama king size</h3>
+        <p>Quarto de arquitetura autoral.</p>
+      </div>
+      <div class="amenity">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 3v18M4 3h9l-2 4 2 4H4M15 21V9"/></svg>
+        <h3>Cozinha equipada</h3>
+        <p>Para cozinhar com calma, no seu tempo.</p>
+      </div>
+      <div class="amenity">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12.5a11 11 0 0 1 14 0M8 15.5a6.5 6.5 0 0 1 8 0M11.5 18.5a2 2 0 0 1 1 0"/></svg>
+        <h3>Wi-Fi de alta velocidade</h3>
+        <p>Conectividade estável quando precisar.</p>
+      </div>
+      <div class="amenity">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="9" width="18" height="10" rx="1.5"/><path d="M7 9V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2M8 14h.01M16 14h.01"/></svg>
+        <h3>Estacionamento privativo</h3>
+        <p>3 vagas na propriedade.</p>
+      </div>
+      <div class="amenity">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="16" r="3"/><path d="M10.5 13.5 19 5M17 5h3v3M14 8l2 2"/></svg>
+        <h3>Self check-in</h3>
+        <p>Chegue no seu tempo, com fechadura inteligente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos" class="section-pad">
+  <div class="wrap">
+    <p class="kicker mono reveal">Serviços exclusivos</p>
+    <h2 class="section-title reveal">Para tornar a estadia ainda mais sua.</h2>
+    <p class="section-lead reveal">Mediante agendamento prévio, disponíveis para complementar a experiência.</p>
+    <div class="services-row reveal">
+      <div class="service-card"><div class="service-num mono">01</div><h3>Jantar com chef</h3><p>Experiência gastronômica exclusiva na casa.</p></div>
+      <div class="service-card"><div class="service-num mono">02</div><h3>Café da manhã</h3><p>Tábua servida no seu ritmo, pela manhã.</p></div>
+      <div class="service-card"><div class="service-num mono">03</div><h3>Sound healing</h3><p>Sessão de cura sonora e relaxamento profundo.</p></div>
+      <div class="service-card"><div class="service-num mono">04</div><h3>Massagem</h3><p>Terapia corporal para descanso total.</p></div>
+      <div class="service-card"><div class="service-num mono">05</div><h3>Aula de yoga</h3><p>Prática guiada, cercados pela serra.</p></div>
+    </div>
+    <p class="service-note reveal">Consulte disponibilidade e valores após a reserva, diretamente com a anfitriã.</p>
+  </div>
+</section>
+
+<!-- AVALIAÇÕES -->
+<section id="avaliacoes" class="section-pad">
+  <div class="wrap">
+    <p class="kicker mono reveal" style="color:var(--brass)">Avaliações</p>
+    <h2 class="section-title reveal">O que dizem os hóspedes.</h2>
+
+    <div class="review-layout">
+      <div class="reveal">
+        <div class="rating-row"><span>Limpeza</span><div class="bar"><span style="width:100%"></span></div><b>5,0</b></div>
+        <div class="rating-row"><span>Exatidão</span><div class="bar"><span style="width:100%"></span></div><b>5,0</b></div>
+        <div class="rating-row"><span>Check-in</span><div class="bar"><span style="width:100%"></span></div><b>5,0</b></div>
+        <div class="rating-row"><span>Comunicação</span><div class="bar"><span style="width:100%"></span></div><b>5,0</b></div>
+        <div class="rating-row"><span>Localização</span><div class="bar"><span style="width:100%"></span></div><b>5,0</b></div>
+        <div class="rating-row"><span>Custo-benefício</span><div class="bar"><span style="width:100%"></span></div><b>5,0</b></div>
+      </div>
+
+      <div class="reveal">
+        <p style="opacity:0.65; font-size:0.85rem; margin-bottom:20px;">O que os hóspedes mais destacam nas 40 avaliações:</p>
+        <div class="tagcloud">
+          <span style="font-size:1.7rem; font-weight:600;">Hospitalidade<small>31</small></span>
+          <span style="font-size:1.35rem; font-weight:600;">Vista<small>19</small></span>
+          <span style="font-size:1.05rem;">Conforto<small>10</small></span>
+          <span style="font-size:1rem;">Espaço interno<small>8</small></span>
+          <span style="font-size:0.96rem;">Decoração<small>7</small></span>
+          <span style="font-size:0.96rem;">Localização<small>7</small></span>
+          <span style="font-size:0.92rem;">Piscina<small>6</small></span>
+          <span style="font-size:0.9rem;">Exatidão<small>5</small></span>
+          <span style="font-size:0.87rem;">Espaço ao ar livre<small>4</small></span>
+          <span style="font-size:0.85rem;">Condições<small>3</small></span>
+        </div>
+        <p class="review-cta">
+          <a href="https://www.airbnb.com.br/rooms/1533772593025815094" target="_blank" rel="noopener">Ver todas as 40 avaliações no Airbnb →</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANFITRIÕES -->
+<section id="anfitrioes" class="section-pad">
+  <div class="wrap">
+    <p class="kicker mono reveal">Os criadores</p>
+    <h2 class="section-title reveal">Cris &amp; Nath.</h2>
+
+    <div class="host-layout reveal">
+      <div>
+        <div class="host-photo">
+          <img src="https://a0.muscache.com/im/pictures/user/User/original/12973a93-9c81-427f-9a0a-d69cbb7a48a2.jpeg?im_w=240" alt="Anfitriões Cris & Nath" loading="lazy">
+        </div>
+        <div class="host-badges">
+          <span class="badge">Superhost</span>
+          <span class="badge">Responde em 1h</span>
+        </div>
+      </div>
+      <div class="host-text">
+        <p>Artistas conectados à criatividade, estética e design: Cristiano Trad — designer, fotógrafo e diretor de fotografia — e Nathália Marçal — atriz, jornalista e diretora criativa — reuniram vivências no Brasil e no mundo para criar a Casa Zenbali. Um refúgio autoral, pioneiro no Brasil como hospedagem boutique com foco em wellness.</p>
+        <div class="host-stats">
+          <div><b>5,0</b>avaliação média</div>
+          <div><b>40</b>avaliações</div>
+          <div><b>6</b>meses hospedando</div>
+          <div><b>100%</b>taxa de resposta</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section id="paraquem" class="section-pad">
+  <div class="wrap">
+    <p class="kicker mono reveal">Uma proposta clara</p>
+    <h2 class="section-title reveal">Para quem busca silêncio de verdade.</h2>
+
+    <div class="fit-layout">
+      <div class="fit-card reveal">
+        <h3>Feito para você, se…</h3>
+        <ul>
+          <li class="fit-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Busca privacidade e desconexão a dois</li>
+          <li class="fit-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Valoriza design, estética e silêncio</li>
+          <li class="fit-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Está confortável em enviar documento de identidade antes do check-in</li>
+          <li class="fit-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Quer uma experiência guiada por wellness e presença</li>
+        </ul>
+      </div>
+      <div class="fit-card reveal">
+        <h3>Importante saber</h3>
+        <ul>
+          <li class="fit-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>Máximo de 2 hóspedes — sem exceções</li>
+          <li class="fit-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>Não recebemos crianças nem pets</li>
+          <li class="fit-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>Sem visitantes ou festas</li>
+          <li class="fit-no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>Ambiente de natureza preservada — atenção à fauna local</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-pad">
+  <div class="wrap">
+    <p class="kicker mono reveal">Perguntas frequentes</p>
+    <h2 class="section-title reveal" style="margin-bottom:44px;">Tudo o que você precisa saber.</h2>
+  </div>
+  <div id="faq" class="reveal">
+    <details>
+      <summary>Quantas pessoas podem se hospedar? <span class="plus"></span></summary>
+      <p>Até 2 adultos. A casa foi pensada e estruturada exclusivamente para a privacidade total de um casal ou dupla.</p>
+    </details>
+    <details>
+      <summary>Aceita crianças ou pets? <span class="plus"></span></summary>
+      <p>Não. Por conceito, a experiência foi estruturada para receber apenas 2 adultos, preservando o silêncio e a presença propostos pela casa.</p>
+    </details>
+    <details>
+      <summary>Qual o horário de check-in e checkout? <span class="plus"></span></summary>
+      <p>Check-in após as 15h e checkout até as 12h. O acesso é feito por self check-in, com fechadura eletrônica.</p>
+    </details>
+    <details>
+      <summary>É possível fazer check-in no mesmo dia? <span class="plus"></span></summary>
+      <p>Sim, aceitamos reservas para check-in no próprio dia até às 11h da manhã. Após esse horário, novas reservas ficam disponíveis apenas para a noite seguinte.</p>
+    </details>
+    <details>
+      <summary>Preciso enviar documento de identidade? <span class="plus"></span></summary>
+      <p>Sim. Mesmo com o perfil verificado na plataforma, solicitamos o envio prévio de documento de identidade de todos os hóspedes, por segurança.</p>
+    </details>
+    <details>
+      <summary>Como reservar os serviços extras (chef, massagem, yoga)? <span class="plus"></span></summary>
+      <p>Esses serviços são mediante agendamento prévio. Após confirmar a reserva, entre em contato com a anfitriã para consultar disponibilidade e valores.</p>
+    </details>
+  </div>
+</section>
+
+<div class="skyline" aria-hidden="true" style="background:#F6F2E7;">
+  <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,90 L0,55 L110,15 L230,50 L360,8 L520,48 L650,20 L800,52 L960,12 L1120,46 L1280,22 L1440,42 L1440,90 Z" fill="#16241D"/></svg>
+</div>
+
+<!-- CTA FINAL -->
+<section id="reservar">
+  <div class="wrap" style="position:relative;">
+    <h2 class="reveal">Pronto para desacelerar?</h2>
+    <p class="reveal">Restam poucas datas disponíveis nos próximos meses. Confira o calendário atualizado e garanta a sua.</p>
+    <a class="btn-primary reveal" href="https://www.airbnb.com.br/rooms/1533772593025815094?check_in=2026-08-06&check_out=2026-08-11&adults=2" target="_blank" rel="noopener">
+      Verificar disponibilidade no Airbnb
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <p class="dates-note reveal">Reservas e pagamentos processados com segurança pelo Airbnb.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <div>
+        <div class="brand" style="color:var(--stone);">CASA <span>Zenbali</span></div>
+        <p style="margin-top:8px;">Brumadinho, Minas Gerais · ★5,0 (40 avaliações) · Superhost</p>
+      </div>
+      <div>
+        <a href="https://www.airbnb.com.br/rooms/1533772593025815094" target="_blank" rel="noopener">Ver anúncio original no Airbnb →</a>
+      </div>
+    </div>
+    <p class="foot-disclaimer">Esta é uma página promocional independente, criada para apresentar a experiência da Casa Zenbali. Reservas e pagamentos são processados diretamente pela plataforma Airbnb.</p>
+  </div>
+</footer>
+
+<div id="sticky-cta">
+  <span>★ 5,0 · Casa Zenbali, Brumadinho</span>
+  <a class="btn-primary" href="https://www.airbnb.com.br/rooms/1533772593025815094?check_in=2026-08-06&check_out=2026-08-11&adults=2" target="_blank" rel="noopener">Verificar disponibilidade</a>
+</div>
+
+<script>
+  // Nav scroll state
+  const nav = document.getElementById('nav');
+  const stickyCta = document.getElementById('sticky-cta');
+  const heroActions = document.querySelector('.hero-actions');
+
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, {passive:true});
+
+  // Sticky CTA appears once hero CTA leaves viewport
+  if ('IntersectionObserver' in window && heroActions) {
+    const stickyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        stickyCta.classList.toggle('show', !entry.isIntersecting);
+      });
+    }, {threshold: 0});
+    stickyObserver.observe(heroActions);
+  }
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15});
+    revealEls.forEach(el => revealObserver.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('is-visible'));
+  }
+
+  // Counter animation for numeric stats
+  const counters = document.querySelectorAll('.stat-num[data-count]');
+  const animateCount = (el) => {
+    const target = parseFloat(el.getAttribute('data-count'));
+    const decimals = parseInt(el.getAttribute('data-decimal') || '0', 10);
+    const duration = 1200;
+    const start = performance.now();
+    const step = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = target * eased;
+      el.textContent = decimals ? value.toFixed(decimals) : Math.round(value);
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = decimals ? target.toFixed(decimals) : target;
+    };
+    requestAnimationFrame(step);
+  };
+  if ('IntersectionObserver' in window) {
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          countObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.6});
+    counters.forEach(el => countObserver.observe(el));
+  } else {
+    counters.forEach(animateCount);
+  }
+</script>
+</body>
+</html>
